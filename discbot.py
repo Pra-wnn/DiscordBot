@@ -2,7 +2,7 @@ import discord
 import os
 import json
 import requests
-from replit import db #yeh just do this proragram in replit
+from replit import db 
 import random
 
 # client = commands.Bot(command_prefix='.')
@@ -10,7 +10,7 @@ client = discord.Client()
 
 
 love_words = ['neko','cat','meow','like','love','desu']
-anime_life = ['cats are cute :3',                   #random choice make sure they are one separate line
+anime_life = ['cats are cute :3',                
             'anime is love',
             'neko para is a visual novel',
             'i love anime',
@@ -20,13 +20,13 @@ def get_quote():
     response = requests.get('https://animechan.vercel.app/api/random')
     json_data = json.loads(response.text)
     
-    quote=json_data['anime']        # finally after so much time there are other ways to di but this is the easiet took quite a long time
+    quote=json_data['anime']   
     return quote
 def update_animeenc(anime_message):
         
     if "animeenc" in db.keys():
         animeenc = db["animeenc"]
-        animeenc.append(anime_message)      # append is () not [] took me an hours to realise that mistake
+        animeenc.append(anime_message)     
         db["animeenc"] = animeenc  
     else:
         db["animeenc"] = [anime_message]
@@ -78,5 +78,5 @@ async def on_message(message):
 
 
 
-client.run(os.getenv('TOKEN'))  #very useful to hide the data
+client.run(os.getenv('TOKEN'))  # use env variable
 
