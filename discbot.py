@@ -9,12 +9,8 @@ import random
 client = discord.Client()
 
 
-love_words = ['neko','cat','meow','like','love','desu']
-anime_life = ['cats are cute :3',                
-            'anime is love',
-            'neko para is a visual novel',
-            'i love anime',
-            'hai']
+love_words = ['']
+anime_life = ['']
     
 def get_quote():
     response = requests.get('https://animechan.vercel.app/api/random')
